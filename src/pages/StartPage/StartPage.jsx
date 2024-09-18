@@ -13,7 +13,7 @@ export default function StartPage() {
 
       return qrCodeList[randomIndex].qr_code;
     }
-    return ''
+    return 'V3P9G00VR7'
   }
 
   useEffect(() => {
