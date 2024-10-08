@@ -9,11 +9,12 @@ export default function StartPage() {
 
   function getRandomNumber(array) {
     if(array.length){
+      const filteredArray = array.filter(qr => !qr.is_used)
       const randomIndex = Math.floor(Math.random() * (array.length + 1))
 
-      return qrCodeList[randomIndex].qr_code;
+      return filteredArray[randomIndex].qr_code;
     }
-    return 'V3P9G00VR7'
+    return ''
   }
 
   useEffect(() => {
@@ -41,7 +42,10 @@ export default function StartPage() {
           <QRCode
             value={code}
           />
+        
         </div>
+       
       </div>
+       <h2>{code}</h2>
     </div>)
 }
